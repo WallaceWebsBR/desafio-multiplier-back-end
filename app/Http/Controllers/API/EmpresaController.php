@@ -62,7 +62,7 @@ class EmpresaController extends BaseController
     }
 
     /**
-     * @OA\Post(
+     * @OA\Put(
      *     path="/api/empresas/{id}",
      *     summary="Update empresa by ID",
      *     tags={"Empresas"},

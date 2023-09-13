@@ -105,12 +105,12 @@
             }
         },
         "/api/empresas/{id}": {
-            "post": {
+            "put": {
                 "tags": [
                     "Empresas"
                 ],
                 "summary": "Update empresa by ID",
-                "operationId": "47461a6a39d39d5d97721bcc93907890",
+                "operationId": "ce93f40ed75fee73ce26b1a36e2789a4",
                 "parameters": [
                     {
                         "name": "id",
@@ -133,7 +133,7 @@
                     "Empresas"
                 ],
                 "summary": "Delete empresa by ID",
-                "operationId": "ef7de20a0e4a20946e9365185d7a08ab",
+                "operationId": "ecf374a090235a5209587b781d988870",
                 "parameters": [
                     {
                         "name": "id",
