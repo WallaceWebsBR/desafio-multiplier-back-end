@@ -1,0 +1,162 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "SISCNPJ",
+        "description": "Sistema de Cadastro Nacional de Pessoas Jurídicas",
+        "contact": {
+            "name": "WallaceWebs",
+            "url": "https://wallacewebs.com",
+            "email": "dev@wallacewebs.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/empresas": {
+            "get": {
+                "tags": [
+                    "Empresas"
+                ],
+                "summary": "List all Empresas",
+                "operationId": "306cefa0f8fe88af562dba09cb2bbcf8",
+                "responses": {
+                    "200": {
+                        "description": "Lista de empresas"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Empresas"
+                ],
+                "summary": "Create a new empresa",
+                "operationId": "9931ac00a9126aad02caa2771ca7e050",
+                "requestBody": {
+                    "description": "Dados da empresa",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "razao_social",
+                                    "nome_fantasia",
+                                    "cnpj",
+                                    "endereco",
+                                    "cidade",
+                                    "estado",
+                                    "pais",
+                                    "telefone",
+                                    "email"
+                                ],
+                                "properties": {
+                                    "razao_social": {
+                                        "type": "string",
+                                        "example": "Minha Empresa Ltda"
+                                    },
+                                    "nome_fantasia": {
+                                        "type": "string",
+                                        "example": "Minha Empresa"
+                                    },
+                                    "cnpj": {
+                                        "type": "string",
+                                        "example": "12345678901234"
+                                    },
+                                    "endereco": {
+                                        "type": "string",
+                                        "example": "123 Rua Principal"
+                                    },
+                                    "cidade": {
+                                        "type": "string",
+                                        "example": "Cidade"
+                                    },
+                                    "estado": {
+                                        "type": "string",
+                                        "example": "SP"
+                                    },
+                                    "pais": {
+                                        "type": "string",
+                                        "example": "Brasil"
+                                    },
+                                    "telefone": {
+                                        "type": "string",
+                                        "example": "(11) 9999-9999"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "contato@minhaempresa.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Empresa criada com sucesso"
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    }
+                }
+            }
+        },
+        "/api/empresas/{id}": {
+            "post": {
+                "tags": [
+                    "Empresas"
+                ],
+                "summary": "Update empresa by ID",
+                "operationId": "47461a6a39d39d5d97721bcc93907890",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Empresa",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Empresa atualizada com sucesso"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Empresas"
+                ],
+                "summary": "Delete empresa by ID",
+                "operationId": "ef7de20a0e4a20946e9365185d7a08ab",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Empresa",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Empresa deletada com sucesso"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Empresas",
+            "description": "Operações relacionadas a empresas"
+        }
+    ]
+}
