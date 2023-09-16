@@ -82,11 +82,15 @@
                                     },
                                     "telefone": {
                                         "type": "string",
-                                        "example": "(11) 9999-9999"
+                                        "example": "119999999"
                                     },
                                     "email": {
                                         "type": "string",
                                         "example": "contato@minhaempresa.com"
+                                    },
+                                    "cnae_principal": {
+                                        "type": "string",
+                                        "example": "45755458"
                                     }
                                 },
                                 "type": "object"
@@ -95,7 +99,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "Empresa criada com sucesso"
                     },
                     "422": {

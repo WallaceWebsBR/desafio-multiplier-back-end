@@ -26,6 +26,7 @@ class Empresa extends Model
         'pais',
         'telefone',
         'email',
+        'cnae_principal'
     ];
 
     public function getCnae()

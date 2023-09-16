@@ -46,17 +46,17 @@ class EmpresaController extends BaseController
      *             @OA\Property(property="cidade", type="string", example="Cidade"),
      *             @OA\Property(property="estado", type="string", example="SP"),
      *             @OA\Property(property="pais", type="string", example="Brasil"),
-     *             @OA\Property(property="telefone", type="string", example="(11) 9999-9999"),
+     *             @OA\Property(property="telefone", type="string", example="119999999"),
      *             @OA\Property(property="email", type="string", example="contato@minhaempresa.com"),
+     *             @OA\Property(property="cnae_principal", type="string", example="45755458")
      *         ),
      *     ),
-     *     @OA\Response(response="200", description="Empresa criada com sucesso"),
+     *     @OA\Response(response="201", description="Empresa criada com sucesso"),
      *     @OA\Response(response="422", description="Erro de validação"),
      * )
      */
-    public function create(EmpresaRequest $empresa)
+    public function create(Request $empresa)
     {
-        $empresa->validate();
         Empresa::create($empresa->all());
         return Response::json('Empresa criada', 201);
     }
